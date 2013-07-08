@@ -1,0 +1,41 @@
+html { 
+    background: url(../img/bg_brickwall.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    cursor: crosshair; 
+} 
+
+.canvas_bg{
+    background-image: url(../img/im_canvas.png);
+    width:400;
+    height:400;
+    position:relative;
+    left:-50%;
+    border:2px solid;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    cursor: crosshair;
+}
+
+.centre_wrapper{
+    position: absolute;
+    left:50%;
+    top:30%;
+    cursor: crosshair;
+}
+
+.can{
+    position:relative;
+    left:-50%;
+    top:-50%;
+    border:2px solid;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;  
+    cursor: crosshair; 
+    width:400;
+    height:400;    
+}
