@@ -83,13 +83,17 @@ function save() {
 }
 
 function findxy(res, e) {
-    tX = e.clientX - document.width*0.5 - canvas.offsetLeft;
-    tY = e.clientY - document.height*0.3 - canvas.offsetTop;
+
+    // Save the old position
+    prevX = currX;
+    prevY = currY;
+
+    // Get the current cursor position
+    var rect = canvas.getBoundingClientRect();
+    currX = e.clientX - rect.left;
+    currY = e.clientY - rect.top;
+
     if (res == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - document.width*0.5 - canvas.offsetLeft;
-        currY = e.clientY - document.height*0.3 - canvas.offsetTop;
 
         flag = true;
         dot_flag = true;
@@ -100,18 +104,12 @@ function findxy(res, e) {
             ctx.closePath();
             dot_flag = false;
         }
-    }
-    if (res == 'up' || res == "out") {
+    } else if (res == 'up' || res == "out") {
         flag = false;
-    }
-    if (res == 'move') {
+    } else if (res == 'move') {
         if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - document.width*0.5 - canvas.offsetLeft;
-            currY = e.clientY - document.height*0.3 - canvas.offsetTop;
+
             draw();
         }
     }
 }
-        
